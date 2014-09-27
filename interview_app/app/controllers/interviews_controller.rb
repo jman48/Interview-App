@@ -15,6 +15,7 @@ class InterviewsController < ApplicationController
   # GET /interviews/new
   def new
     @interview = Interview.new
+    @companies = getCompanies
   end
 
   # GET /interviews/1/edit
@@ -24,7 +25,8 @@ class InterviewsController < ApplicationController
   # POST /interviews
   # POST /interviews.json
   def create
-    @interview = Interview.new(interview_params)
+    @interview = Interview.new
+    @interview.company = Company.find(params[:company]).name
 
     respond_to do |format|
       if @interview.save
@@ -71,4 +73,19 @@ class InterviewsController < ApplicationController
     def interview_params
       params.require(:interview).permit(:company)
     end
+  
+  def getCompanies
+    companies = Array.new
+    Company.all.each do |company|
+      companies.push([company.name, company.id])
+    end
+    return companies
+  end
+  
+  
+  
+  #Scroll space!!!
+  
+  
+  
 end

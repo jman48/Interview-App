@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :company %><br>
-    <%= f.text_field :company %>
+    <%= select_tag(:company, options_for_select(@companies)) %>
   </div>
   <div class="actions">
     <%= f.submit %>
