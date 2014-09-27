@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :interviews
   
   post 'interviews/new_question' => "interviews#new_question"
+  
+  post '/interviews/delete_question' => "interviews#delete_question"
 
   resources :companies
 

@@ -5,7 +5,13 @@
 
 <ul>
   <% @questions.each do |question| %>
+  
   <li><%= question.question %></li>
+  <%= form_tag( "./delete_question", method: "post") do %>
+    <%= hidden_field_tag(:id, @interview.id) %>
+    <%= hidden_field_tag(:question, question.id) %>
+  <%= submit_tag("delete") %>
+  <% end %>
   <% end %>  
 </ul>
 

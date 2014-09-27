@@ -1,5 +1,5 @@
 class InterviewsController < ApplicationController
-  before_action :set_interview, only: [:show, :edit, :update, :destroy, :new_question]
+  before_action :set_interview, only: [:show, :edit, :update, :destroy, :new_question, :delete_question]
 
   # GET /interviews
   # GET /interviews.json
@@ -64,11 +64,18 @@ class InterviewsController < ApplicationController
     end
   end
   
+  #Add a new question to this interview
   def new_question
     question = Question.new
     question.question = params[:question]
     question.interview = params[:id]
     question.save
+    
+    redirect_to @interview
+  end
+  
+  def delete_question
+    Question.find(params[:question]).destroy
     
     redirect_to @interview
   end
