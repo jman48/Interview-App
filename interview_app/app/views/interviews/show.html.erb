@@ -1,9 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Company:</strong>
-  <%= @interview.company %>
-</p>
+
+<h1><%= @interview.company %></h1>
+
+<ul>
+  <% @questions.each do |question| %>
+  <li><%= question.question %></li>
+  <% end %>  
+</ul>
+
+<%= form_tag( "./new_question", method: "post") do %>
+  <%= hidden_field_tag(:id, @interview.id) %>
+  <%= text_field_tag(:question) %>
+  <%= submit_tag("Add") %>
+<% end %>
 
 <%= link_to 'Edit', edit_interview_path(@interview) %> |
 <%= link_to 'Back', interviews_path %>

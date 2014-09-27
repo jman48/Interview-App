@@ -1,5 +1,5 @@
 class InterviewsController < ApplicationController
-  before_action :set_interview, only: [:show, :edit, :update, :destroy]
+  before_action :set_interview, only: [:show, :edit, :update, :destroy, :new_question]
 
   # GET /interviews
   # GET /interviews.json
@@ -10,6 +10,7 @@ class InterviewsController < ApplicationController
   # GET /interviews/1
   # GET /interviews/1.json
   def show
+    @questions = Question.where("interview = ?", @interview.id)
   end
 
   # GET /interviews/new
@@ -61,6 +62,15 @@ class InterviewsController < ApplicationController
       format.html { redirect_to interviews_url, notice: 'Interview was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  def new_question
+    question = Question.new
+    question.question = params[:question]
+    question.interview = params[:id]
+    question.save
+    
+    redirect_to @interview
   end
 
   private

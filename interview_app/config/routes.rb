@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :questions
 
   resources :interviews
+  
+  post 'interviews/new_question' => "interviews#new_question"
 
   resources :companies
 
