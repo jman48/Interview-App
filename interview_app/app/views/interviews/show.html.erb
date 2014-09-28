@@ -1,25 +1,31 @@
 <p id="notice"><%= notice %></p>
 
 
-<h1><%= @interview.company %></h1>
+<h1 class="text-center"><%= @interview.company %></h1>
 
-<ul>
-  <% @questions.each do |question| %>
-  
-  <li><%= question.question %></li>
-  <%= form_tag( "./delete_question", method: "post") do %>
-    <%= hidden_field_tag(:id, @interview.id) %>
-    <%= hidden_field_tag(:question, question.id) %>
-  <%= submit_tag("delete") %>
-  <% end %>
-  <% end %>  
-</ul>
+<div class="content">
+  <% @questions.each_with_index do |question, index| %>
+  <% if index % 2 != 0 %>
+    <div class="row question">
+      <% else %>
+      <div class="row question second_row">
+      <% end %>
+      <%= form_tag( "./delete_question", method: "post") do %>
+      <span class="item_text"><i class="fa fa-angle-right"></i><%= question.question %></span>
+      <%= hidden_field_tag(:id, @interview.id) %>
+      <%= hidden_field_tag(:question, question.id) %>
+        <%= button_tag("Delete", class: "pull-right btn btn-default delete_btn") do %>
+        <i class="fa fa-close"></i> 
+    <% end %>
+    <% end %></div>
+    <% end %> 
+</div>
 
 <%= form_tag( "./new_question", method: "post") do %>
   <%= hidden_field_tag(:id, @interview.id) %>
   <%= text_field_tag(:question) %>
-  <%= submit_tag("Add") %>
+  <%= submit_tag("Add", class: "btn btn-default") %>
 <% end %>
 
-<%= link_to 'Edit', edit_interview_path(@interview) %> |
-<%= link_to 'Back', interviews_path %>
+<%= link_to 'Edit', edit_interview_path(@interview), class: "btn btn-default" %>
+<%= link_to 'Back', interviews_path, class: "btn btn-default" %>

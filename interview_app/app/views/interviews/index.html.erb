@@ -1,25 +1,26 @@
-<h1>Listing interviews</h1>
+<h1 class="text-center">Interviews</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Company</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @interviews.each do |interview| %>
-      <tr>
-        <td><%= interview.company %></td>
-        <td><%= link_to 'Show', interview %></td>
-        <td><%= link_to 'Edit', edit_interview_path(interview) %></td>
-        <td><%= link_to 'Destroy', interview, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% @interviews.each_with_index do |interview, index| %>
+<% if index % 2 == 0 %>
+    <div class="row items second_row">  
+      <% else %>
+        <div class="row items"> 
+      <% end %>
+          <%= link_to interview.company, interview, class: "item_link" %>
+
+      <div class="buttons pull-right">        
+      
+          <%= link_to edit_interview_path(interview) do %>
+            <i class="fa fa-edit fa-2x"></i> 
+          <% end %>
+
+          <%= link_to interview, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fa fa-close fa-2x"></i> 
+          <% end %>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
 <br>
 
-<%= link_to 'New Interview', new_interview_path %>
+      <%= link_to 'New Interview', new_interview_path, class: "btn btn-default" %>

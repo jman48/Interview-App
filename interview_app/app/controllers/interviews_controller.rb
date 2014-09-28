@@ -75,6 +75,7 @@ class InterviewsController < ApplicationController
   end
   
   def delete_question
+    #@interview = Interview.find(params[:interview])
     Question.find(params[:question]).destroy
     
     redirect_to @interview
