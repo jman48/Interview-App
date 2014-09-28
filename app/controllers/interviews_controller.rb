@@ -10,7 +10,7 @@ class InterviewsController < ApplicationController
   # GET /interviews/1
   # GET /interviews/1.json
   def show
-    @questions = Question.where("interview = ?", @interview.id)
+    @questions = Question.where("interview = ?", @interview.company)
   end
 
   # GET /interviews/new
@@ -68,7 +68,7 @@ class InterviewsController < ApplicationController
   def new_question
     question = Question.new
     question.question = params[:question]
-    question.interview = params[:id]
+    question.interview = @interview.company
     question.save
     
     redirect_to @interview
