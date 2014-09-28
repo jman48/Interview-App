@@ -1,7 +1,79 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Company.create!([
+  {name: "Xero"},
+  {name: "Trade Me"},
+  {name: "Solnet"},
+  {name: "Stripe the Web"},
+  {name: "Resene Group"},
+  {name: "SilverStripe"},
+  {name: "OrbitRemit Global"},
+  {name: "Kiwibank"},
+  {name: "Mindscape"},
+  {name: "Regen Ltd"},
+  {name: "Publons"},
+  {name: "Embrium"},
+  {name: "HashBang"},
+  {name: "Optimal Workshop"},
+  {name: "Collect"},
+  {name: "3Months"},
+  {name: "Department of International Affairs"},
+  {name: "NZRS"}
+])
+Interview.create!([
+  {company: "Xero"},
+  {company: "Trade Me"},
+  {company: "Stripe the Web"},
+  {company: "Solnet"},
+  {company: "Resene Group"},
+  {company: "SilverStripe"},
+  {company: "OrbitRemit Global"},
+  {company: "Kiwibank"},
+  {company: "Mindscape"},
+  {company: "Regen Ltd"},
+  {company: "Publons"},
+  {company: "Embrium"},
+  {company: "HashBang"},
+  {company: "Optimal Workshop"},
+  {company: "Collect"},
+  {company: "3Months"},
+  {company: "Department of International Affairs"},
+  {company: "NZRS"}
+])
+Question.create!([
+  {question: "test2", interview: 5},
+  {question: "Part-time work after summer", interview: 3},
+  {question: "Part-time work after summer", interview: 4},
+  {question: "What does the role involve?", interview: 4},
+  {question: "Languages/ Framworks?", interview: 4},
+  {question: "Languages/ Framworks?", interview: 6},
+  {question: "Part-time work after summer", interview: 6},
+  {question: "Part-time work after summer", interview: 7},
+  {question: "Languages/ Framworks?", interview: 7},
+  {question: "Part-time work after summer", interview: 8},
+  {question: "Languages/ Framworks?", interview: 8},
+  {question: "Part-time work after summer", interview: 9},
+  {question: "Languages/ Framworks?", interview: 9},
+  {question: "Part-time work after summer", interview: 10},
+  {question: "Languages/ Framworks?", interview: 10},
+  {question: "Part-time work after summer", interview: 11},
+  {question: "Languages/ Framworks?", interview: 11},
+  {question: "Part-time work after summer", interview: 12},
+  {question: "Languages/ Framworks?", interview: 12},
+  {question: "Part-time work after summer", interview: 13},
+  {question: "Languages/ Framworks?", interview: 13},
+  {question: "Part-time work after summer", interview: 14},
+  {question: "Languages/ Framworks?", interview: 14},
+  {question: "Part-time work after summer", interview: 15},
+  {question: "Languages/ Framworks?", interview: 15},
+  {question: "Part-time work after summer", interview: 16},
+  {question: "Languages/ Framworks?", interview: 16},
+  {question: "Part-time work after summer", interview: 17},
+  {question: "Languages/ Framworks?", interview: 17},
+  {question: "Part-time work after summer", interview: 18},
+  {question: "Languages/ Framworks?", interview: 18},
+  {question: "Part-time work after summer", interview: 19},
+  {question: "Languages/ Framworks?", interview: 19},
+  {question: "Part-time work after summer", interview: 20},
+  {question: "Languages/ Framworks?", interview: 20},
+  {question: "Part-time work after summer", interview: 21},
+  {question: "Languages/ Framworks?", interview: 21}
+])
