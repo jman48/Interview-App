@@ -1,28 +1,3 @@
-= README
+<h2>Interview Web Application</h2>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+<p>This is just a simple web app that I put together to help me keep track of what questions I had for the companies that I was interviewing with for Summer of Tech 2014.</p>
